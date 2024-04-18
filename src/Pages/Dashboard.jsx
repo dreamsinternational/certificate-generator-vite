@@ -315,24 +315,45 @@ const Dashboard = () => {
           />
         </PDFViewer>
       )}
-      <div className="toggle-preview">
-        <button
-          className="btn btn-primary"
-          onClick={() => setIsFrontView(true)}
-        >
-          Front Preview
-        </button>
-        <button
-          className="btn btn-primary"
-          onClick={() => setIsFrontView(false)}
-        >
-          Back Preview
-        </button>
-      </div>
+
       <div className="main-inputs">
-        <input type="file" onChange={(e) => handleFileInput(e, true)} />
-        <input type="file" onChange={(e) => handleFileInput(e, false)} />
-        <div className="form-file">
+        <div className="mb-4 form-file">
+          <input
+            type="file"
+            className="form-file-input"
+            id="customFile1"
+            onChange={(e) => handleFileInput(e, true)}
+          />
+          <label className="form-file-label" htmlFor="customFile1">
+            <span className="form-file-text">Front Page Image</span>
+            <span
+              className="btn btn-primary"
+              style={{ borderRadius: "0 3px 3px 0" }}
+            >
+              Browse
+            </span>
+          </label>
+        </div>
+
+        <div className="mb-4 form-file">
+          <input
+            type="file"
+            className="form-file-input"
+            id="customFile2"
+            onChange={(e) => handleFileInput(e, false)}
+          />
+          <label className="form-file-label" htmlFor="customFile2">
+            <span className="form-file-text">Back Page Image</span>
+            <span
+              className="btn btn-primary"
+              style={{ borderRadius: "0 3px 3px 0" }}
+            >
+              Browse
+            </span>
+          </label>
+        </div>
+
+        <div className="mb-4 form-file">
           <input
             type="file"
             className="form-file-input"
@@ -340,9 +361,7 @@ const Dashboard = () => {
             onChange={handleFileChange}
           />
           <label className="form-file-label" htmlFor="customFile">
-            <span className="form-file-text">
-              Bulk Add Emails... Eg. abc.xslx
-            </span>
+            <span className="form-file-text">Import Excel File</span>
             <span
               className="btn btn-primary"
               style={{ borderRadius: "0 3px 3px 0" }}
