@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import * as XLSX from "xlsx";
 import {
   Document,
@@ -8,9 +8,33 @@ import {
   Text,
   PDFViewer,
   pdf,
+  Font,
 } from "@react-pdf/renderer";
 import { saveAs } from "file-saver";
 import JSZip from "jszip";
+import ComicSansRegular from "../../public/fonts/comic-sans/COMICSANS.woff";
+import ComicSansBold from "../../public/fonts/comic-sans/COMICSANSBOLD.TTF";
+import { GlobalContext } from "../GlobalContext";
+
+// Font.register({
+//   family: "ComicSans",
+//   fonts: [
+//     { src: ComicSansRegular, fontWeight: "normal" },
+//     { src: ComicSansBold, fontWeight: "bold" },
+//   ],
+// });
+
+// Font.register({
+//   family: "Comic-Sans",
+//   src: "../../public/fonts/comic-sans/COMICSANS.woff",
+// });
+
+Font.register({
+  family: "ComicNeue",
+  src: "https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap",
+  fontStyle: "normal",
+  fontWeight: "normal",
+});
 
 const MyDocument = ({
   frontImage,
@@ -77,6 +101,8 @@ const MyDocument = ({
                   textTransform: "uppercase",
                   textAlign: "center",
                   color: "#732561",
+                  fontFamily: "Courier-Bold",
+                  fontWeight: "600",
                 }}
               >
                 {experiment["Experiment Name"]}
@@ -85,6 +111,7 @@ const MyDocument = ({
                 style={{
                   marginTop: "15px",
                   fontSize: "40.2px",
+                  fontFamily: "Times-Bold",
                   textTransform: "uppercase",
                   color: "#85157B",
                 }}
@@ -102,6 +129,7 @@ const MyDocument = ({
                 style={{
                   marginTop: "15px",
                   fontSize: "40.2px",
+                  fontFamily: "Times-Bold",
                   textTransform: "uppercase",
                   color: "#85157B",
                 }}
@@ -137,6 +165,7 @@ const MyDocument = ({
                 style={{
                   marginTop: "15px",
                   fontSize: "40.2px",
+                  fontFamily: "Times-Bold",
                   textTransform: "uppercase",
                   color: "#85157B",
                 }}
@@ -154,6 +183,7 @@ const MyDocument = ({
                 style={{
                   marginTop: "15px",
                   fontSize: "40.2px",
+                  fontFamily: "Times-Bold",
                   textTransform: "uppercase",
                   color: "#85157B",
                 }}
@@ -176,6 +206,8 @@ const MyDocument = ({
 };
 
 const Dashboard = () => {
+  const { setLoading } = useContext(GlobalContext);
+
   const [fontFamily, setFontFamily] = useState("Kalam");
   const [primaryColor, setPrimaryColor] = useState("purple");
   const [textColor, setTextColor] = useState("black");
@@ -235,43 +267,8 @@ const Dashboard = () => {
   };
 
   const downloadAllPDFs = () => {
-    // if (dataArray) {
-    //   const zip = new JSZip();
-    //   dataArray.forEach((data, index) => {
-    //     const pdfBlob = new Blob(
-    //       [
-    // <MyDocument
-    //   key={index} // Ensure each PDF has a unique key
-    //   frontImage={frontImage}
-    //   backImage={backImage}
-    //   experiment={data}
-    //   fontFamily={fontFamily}
-    //   primaryColor={primaryColor}
-    //   textColor={textColor}
-    // />,
-    //       ],
-    //       {
-    //         type: "application/pdf",
-    //       }
-    //     );
-
-    //     // Add each PDF blob to the zip file
-    //     zip.file(`preview_${index + 1}.pdf`, pdfBlob);
-
-    //     // Test: Output the PDF blob to console
-    //     console.log(`PDF Blob for object ${index + 1}:`, pdfBlob);
-    //   });
-
-    //   // Generate the zip file
-    //   zip.generateAsync({ type: "blob" }).then((content) => {
-    //     // Download the zip file
-    //     saveAs(content, "preview.zip");
-    //   });
-    // } else {
-    //   console.log("Data array is empty or null");
-    // }
-
     if (dataArray) {
+      setLoading(true);
       const zip = new JSZip();
       // for each pdf you have to add the blob to the zip
       const imgfolder = zip.folder("images");
@@ -296,6 +293,7 @@ const Dashboard = () => {
 
       zip.generateAsync({ type: "blob" }).then(function (content) {
         // see FileSaver.js
+        setLoading(false);
         saveAs(content, "example.zip");
       });
     }
@@ -373,6 +371,9 @@ const Dashboard = () => {
         <button className="btn btn-primary" onClick={downloadAllPDFs}>
           Download All PDFs
         </button>
+      </div>
+      <div className="">
+        <h1 style={{ fontFamily: "Courier" }}>Checking Font</h1>
       </div>
     </div>
   );

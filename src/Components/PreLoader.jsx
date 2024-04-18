@@ -1,5 +1,3 @@
-import React from "react";
-
 const PreLoader = () => {
   return (
     <div id="preloader" style={{ opacity: "0.5" }}>
