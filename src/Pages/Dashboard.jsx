@@ -48,7 +48,7 @@ const MyDocument = ({
   return (
     <Document>
       {frontImage && (
-        <Page size="letter" orientation="landscape">
+        <Page orientation="landscape">
           <View
             style={{
               width: "100%",
@@ -148,7 +148,7 @@ const MyDocument = ({
         </Page>
       )}
       {backImage && (
-        <Page size="letter" orientation="landscape">
+        <Page orientation="landscape">
           <View style={{ width: "100%", height: "100%" }}>
             <Image src={backImage} style={{ objectFit: "contain" }} />
             <View
