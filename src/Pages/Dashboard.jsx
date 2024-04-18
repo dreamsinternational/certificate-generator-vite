@@ -37,14 +37,29 @@ const MyDocument = ({
             <View
               style={{
                 position: "absolute",
-                height: "100px",
-                width: "100px",
-                backgroundColor: "purple",
-                top: "2%",
-                left: "2%",
+                height: "70px",
+                width: "70px",
+                backgroundColor: "#471C75",
+                top: "3%",
+                left: "3%",
                 borderRadius: "100%",
+                border: "3px solid white",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
               }}
-            ></View>
+            >
+              <Text
+                style={{
+                  color: "white",
+                  fontSize: "50px",
+                }}
+              >
+                {experiment["Experiment Number"] < 10
+                  ? `0${experiment["Experiment Number"]}`
+                  : experiment["Experiment Number"]}
+              </Text>
+            </View>
             <View
               style={{
                 position: "absolute",
@@ -57,41 +72,45 @@ const MyDocument = ({
             >
               <Text
                 style={{
-                  fontSize: "30px",
+                  fontSize: "47px",
+                  letterSpacing: -2,
                   textTransform: "uppercase",
                   textAlign: "center",
+                  color: "#732561",
                 }}
               >
                 {experiment["Experiment Name"]}
               </Text>
               <Text
                 style={{
-                  marginTop: "20px",
-                  fontSize: "30px",
+                  marginTop: "15px",
+                  fontSize: "40.2px",
                   textTransform: "uppercase",
+                  color: "#85157B",
                 }}
               >
                 Objective
               </Text>
               <Text
                 style={{
-                  fontSize: "20px",
+                  fontSize: "26.7px",
                 }}
               >
                 {experiment["Objective"]}
               </Text>
               <Text
                 style={{
-                  marginTop: "20px",
-                  fontSize: "30px",
+                  marginTop: "15px",
+                  fontSize: "40.2px",
                   textTransform: "uppercase",
+                  color: "#85157B",
                 }}
               >
                 Materials
               </Text>
               <Text
                 style={{
-                  fontSize: "20px",
+                  fontSize: "26.7px",
                 }}
               >
                 {experiment["Quantity"]}
@@ -116,34 +135,37 @@ const MyDocument = ({
             >
               <Text
                 style={{
-                  marginTop: "20px",
-                  fontSize: "30px",
+                  marginTop: "15px",
+                  fontSize: "40.2px",
                   textTransform: "uppercase",
+                  color: "#85157B",
                 }}
               >
                 Procedure
               </Text>
               <Text
                 style={{
-                  fontSize: "20px",
+                  fontSize: "26.7px",
                 }}
               >
                 {experiment["Procedure"]}
               </Text>
               <Text
                 style={{
-                  marginTop: "20px",
-                  fontSize: "30px",
+                  marginTop: "15px",
+                  fontSize: "40.2px",
+                  textTransform: "uppercase",
+                  color: "#85157B",
                 }}
               >
-                Materials
+                EXPLANATION
               </Text>
               <Text
                 style={{
-                  fontSize: "20px",
+                  fontSize: "26.7px",
                 }}
               >
-                {experiment["Quantity"]}
+                {experiment["Explanation"]}
               </Text>
             </View>
           </View>
