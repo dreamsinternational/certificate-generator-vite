@@ -1,0 +1,74 @@
+// stylelint-disable-next-line scss/dollar-variable-default
+$primary: #239FDB; // #0F6EFE
+$secondary: #eff2f7 !default;
+$success: #36b37e !default;
+$info: #00b8d9 !default;
+$warning: #ffab00 !default;
+$danger: #ff5630 !default;
+$light: #f6f9fc !default;
+$dark: #1e2e50;
+$purple: #6672e8;
+
+// Body
+$body-bg: #fff;
+$body-color: #7184ad;
+
+// Typography
+$font-family-base: "Spartan", sans-serif;
+$headings-font-weight: 600;
+$font-size-base: 1rem !default;
+$font-weight-base: 400 !default;
+// $line-height-base    : 1.6;
+$headings-line-height: 1.6;
+$h1-font-size: 2.25rem;
+$h2-font-size: 1.875rem;
+$h3-font-size: 1.5rem;
+$h4-font-size: 1.125rem;
+$h5-font-size: 1rem;
+$h6-font-size: 1rem;
+
+$text-muted: #7184ad;
+
+$heading-primary-size: 1.8rem;
+$sub-heading-size: 1.6rem !default;
+$grid-gutter-width: 30px;
+$dropdown-lik-color: $body-color;
+$border-color: #eff2f7;
+$headings-color: #3462CB !default;
+$table-striped-bg: $body-bg;
+$border-radius: 4px !default;
+$input-btn-focus-width: 0rem !default;
+
+// custom
+$radius: $border-radius;
+$shadow: 0px 1.25rem 1.5625rem rgba(22, 28, 45, 0.05);
+$shadow-sm: 0 0.125rem 0.25rem rgba(35, 38, 45, 0.09);
+$shadow-lg: 0 1rem 3rem rgba(35, 38, 45, 0.275);
+// $border-width: 2px;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+  "btc": #f7931a,
+  "eth": #282828,
+  "usdt": #2ca07a,
+  "xrp": #346aa9,
+  "ltc": #838383,
+  "ada": #3cc8c8,
+  "eos": #19191a,
+  "xmr": #ff6600,
+  "xtz": #a6df00,
+  "xem": #41bf76,
+  "neo": #58bf00,
+  "dash": #1c75bc,
+  "etc": #669073,
+  "dgb": #0066cc,
+  "dcr": #3b7cfb,
+  "rep": #40a2cb,
+);
