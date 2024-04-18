@@ -32,6 +32,7 @@ const MyDocument = ({
               position: "relative",
             }}
           >
+            {/* second */}
             <Image src={frontImage} style={{ objectFit: "contain" }} />
             <View
               style={{
