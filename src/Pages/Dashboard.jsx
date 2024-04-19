@@ -12,9 +12,14 @@ import {
 } from "@react-pdf/renderer";
 import { saveAs } from "file-saver";
 import JSZip from "jszip";
-import ComicSansRegular from "../../public/fonts/comic-sans/COMICSANS.woff";
+import ComicSansRegular from "../Fonts/ComicNeue-Bold.ttf";
 import ComicSansBold from "../../public/fonts/comic-sans/COMICSANSBOLD.TTF";
 import { GlobalContext } from "../GlobalContext";
+
+Font.register({
+  family: "ComicSans",
+  src: ComicSansRegular,
+});
 
 // Font.register({
 //   family: "ComicSans",
@@ -48,7 +53,7 @@ const MyDocument = ({
   return (
     <Document>
       {frontImage && (
-        <Page orientation="landscape">
+        <Page orientation="landscape" style={{ margin: "0px", padding: "0px" }}>
           <View
             style={{
               width: "100%",
@@ -57,7 +62,15 @@ const MyDocument = ({
             }}
           >
             {/* second */}
-            <Image src={frontImage} style={{ objectFit: "contain" }} />
+            <Image
+              src={frontImage}
+              style={{
+                objectFit: "cover",
+                margin: "0px",
+                padding: "0px",
+                marginBottom: "-10px",
+              }}
+            />
             <View
               style={{
                 position: "absolute",
@@ -101,7 +114,7 @@ const MyDocument = ({
                   textTransform: "uppercase",
                   textAlign: "center",
                   color: "#732561",
-                  fontFamily: "Courier-Bold",
+                  fontFamily: "ComicSans",
                   fontWeight: "600",
                 }}
               >
@@ -150,7 +163,15 @@ const MyDocument = ({
       {backImage && (
         <Page orientation="landscape">
           <View style={{ width: "100%", height: "100%" }}>
-            <Image src={backImage} style={{ objectFit: "contain" }} />
+            <Image
+              src={backImage}
+              style={{
+                objectFit: "cover",
+                margin: "0px",
+                padding: "0px",
+                marginBottom: "-10px",
+              }}
+            />
             <View
               style={{
                 position: "absolute",
@@ -373,7 +394,7 @@ const Dashboard = () => {
         </button>
       </div>
       <div className="">
-        <h1 style={{ fontFamily: "Courier" }}>Checking Font</h1>
+        <h1 style={{ fontFamily: "ComicSans" }}>Checking Font</h1>
       </div>
     </div>
   );
