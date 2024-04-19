@@ -12,7 +12,7 @@ import {
 } from "@react-pdf/renderer";
 import { saveAs } from "file-saver";
 import JSZip from "jszip";
-import ComicSansRegular from "../Fonts/ComicNeue-Bold.ttf";
+import ComicSansRegular from "../Fonts/DancingScript-VariableFont_wght.ttf";
 import ComicSansBold from "../../public/fonts/comic-sans/COMICSANSBOLD.TTF";
 import { GlobalContext } from "../GlobalContext";
 
@@ -124,7 +124,8 @@ const MyDocument = ({
                 style={{
                   marginTop: "15px",
                   fontSize: "40.2px",
-                  fontFamily: "Times-Bold",
+                  fontFamily: "ComicSans",
+                  fontWeight: 500,
                   textTransform: "uppercase",
                   color: "#85157B",
                 }}
@@ -142,7 +143,8 @@ const MyDocument = ({
                 style={{
                   marginTop: "15px",
                   fontSize: "40.2px",
-                  fontFamily: "Times-Bold",
+                  fontFamily: "ComicSans",
+                  fontWeight: 500,
                   textTransform: "uppercase",
                   color: "#85157B",
                 }}
@@ -186,7 +188,8 @@ const MyDocument = ({
                 style={{
                   marginTop: "15px",
                   fontSize: "40.2px",
-                  fontFamily: "Times-Bold",
+                  fontFamily: "ComicSans",
+                  fontWeight: 500,
                   textTransform: "uppercase",
                   color: "#85157B",
                 }}
@@ -204,7 +207,8 @@ const MyDocument = ({
                 style={{
                   marginTop: "15px",
                   fontSize: "40.2px",
-                  fontFamily: "Times-Bold",
+                  fontFamily: "ComicSans",
+                  fontWeight: 500,
                   textTransform: "uppercase",
                   color: "#85157B",
                 }}
